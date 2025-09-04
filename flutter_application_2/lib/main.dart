@@ -114,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ),
                                   SizedBox(width: 4),
                                   Text(
-                                    '350',
+                                    '$_counter',
                                     style: TextStyle(
                                       fontSize: 10,
                                       fontWeight: FontWeight.bold,
@@ -499,47 +499,56 @@ class _MyHomePageState extends State<MyHomePage> {
                                   clipBehavior: Clip.none,
                                   children: [
                                     //クエストボタン
-                                    Container(
-                                      padding: EdgeInsetsGeometry.symmetric(vertical: 10.0, horizontal: 30.0),
-                                      width: 138, 
-                                      height: 40,
-                                      decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius: BorderRadius.circular(20),
-                                        border: Border.all(
-                                            color: Color(0xFFF2F2F2),
-                                            width: 1.0,
-                                        ),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.grey.withOpacity(0.5),
-                                            spreadRadius: 1,
-                                            blurRadius: 3,
-                                            offset: Offset(1, 2),
+                                    GestureDetector(
+                                      onTap: () {
+                                        setState(() {
+                                          _counter++;
+                                        });
+                                      },
+
+                                      child: Container(
+                                        padding: EdgeInsetsGeometry.symmetric(vertical: 10.0, horizontal: 30.0),
+                                        width: 138, 
+                                        height: 40,
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.circular(20),
+                                          border: Border.all(
+                                              color: Color(0xFFF2F2F2),
+                                              width: 1.0,
                                           ),
-                                        ],
-                                      ),
-                                      
-                                      child: Row(
-                                        children: [
-                                          Image.asset(
-                                            'images/quest-icon.png',
-                                            width: 12,
-                                            height: 12,
-                                            fit: BoxFit.cover,
-                                          ),
-                                          SizedBox (width: 10),
-                                          Text(
-                                            'クエスト',
-                                            style: TextStyle(
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.bold,
-                                              color: Color(0xFF00B2B2),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: Colors.grey.withOpacity(0.5),
+                                              spreadRadius: 1,
+                                              blurRadius: 3,
+                                              offset: Offset(1, 2),
                                             ),
-                                          ),
-                                        ],
+                                          ],
+                                        ),
+                                        
+                                        child: Row(
+                                          children: [
+                                            Image.asset(
+                                              'images/quest-icon.png',
+                                              width: 12,
+                                              height: 12,
+                                              fit: BoxFit.cover,
+                                            ),
+                                            SizedBox (width: 10),
+                                            Text(
+                                              'クエスト',
+                                              style: TextStyle(
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.bold,
+                                                color: Color(0xFF00B2B2),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
+                                    
 
                                     Positioned(
                                       top: 0,
