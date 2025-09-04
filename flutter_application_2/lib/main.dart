@@ -147,20 +147,22 @@ class _MyHomePageState extends State<MyHomePage> {
                       //通知アイコン
                       Stack(
                         children: [
-                          Container(
-                            width: 32,
-                            height: 32,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              shape: BoxShape.circle,
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.5),
-                                  spreadRadius: 1,
-                                  blurRadius: 2,
-                                  offset: Offset(0, 1),
-                                ),
-                              ],
+                          GestureDetector(
+                            child: Container(
+                              width: 32,
+                              height: 32,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                shape: BoxShape.circle,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.5),
+                                    spreadRadius: 1,
+                                    blurRadius: 2,
+                                    offset: Offset(0, 1),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
 
@@ -217,80 +219,82 @@ class _MyHomePageState extends State<MyHomePage> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-
                                 Stack(
                                   clipBehavior: Clip.none,
                                   children: [
                                     //数学
-                                    Container(
-                                      width: 220,
-                                      height: 220,
-                                      decoration: BoxDecoration(
-                                        gradient: LinearGradient(
-                                          begin: Alignment.topLeft,
-                                          end: Alignment.bottomRight,
-                                          colors: [
-                                            Color(0xFF7DD1E0),
-                                            Color(0xFF44AFC2),
+                                    GestureDetector(
+                                      child: Container(
+                                        width: 220,
+                                        height: 220,
+                                        decoration: BoxDecoration(
+                                          gradient: LinearGradient(
+                                            begin: Alignment.topLeft,
+                                            end: Alignment.bottomRight,
+                                            colors: [
+                                              Color(0xFF7DD1E0),
+                                              Color(0xFF44AFC2),
+                                            ],
+                                          ),
+                                          borderRadius: BorderRadius.circular(10),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: Colors.grey.withOpacity(0.5),
+                                              spreadRadius: 1,
+                                              blurRadius: 3,
+                                              offset: Offset(1, 2),
+                                            ),
                                           ],
                                         ),
-                                        borderRadius: BorderRadius.circular(10),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.grey.withOpacity(0.5),
-                                            spreadRadius: 1,
-                                            blurRadius: 3,
-                                            offset: Offset(1, 2),
-                                          ),
-                                        ],
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(4),
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(10),
-                                            gradient: LinearGradient(
-                                              begin: Alignment.topLeft,
-                                              end: Alignment.bottomRight,
-                                              colors: [
-                                                Colors.white, 
-                                                Colors.white, 
-                                                Color(0xFFF5FDFF),
-                                                Color(0xFFF5FDFF), 
-                                              ],
-                                              stops: [0.0, 0.45, 0.45, 1.0],
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(4),
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.circular(10),
+                                              gradient: LinearGradient(
+                                                begin: Alignment.topLeft,
+                                                end: Alignment.bottomRight,
+                                                colors: [
+                                                  Colors.white, 
+                                                  Colors.white, 
+                                                  Color(0xFFF5FDFF),
+                                                  Color(0xFFF5FDFF), 
+                                                ],
+                                                stops: [0.0, 0.45, 0.45, 1.0],
+                                              ),
                                             ),
-                                          ),
 
-                                          child: Padding(
-                                            padding: EdgeInsetsGeometry.symmetric(vertical: 16.0, horizontal: 16.0),
-                                            child: Column(
-                                              mainAxisAlignment: MainAxisAlignment.center,
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  '正負の数',
-                                                  style: TextStyle(
-                                                    fontSize: 14,
-                                                    fontWeight: FontWeight.bold,
-                                                    color: Color(0xFF73878D),
+                                            child: Padding(
+                                              padding: EdgeInsetsGeometry.symmetric(vertical: 16.0, horizontal: 16.0),
+                                              child: Column(
+                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    '正負の数',
+                                                    style: TextStyle(
+                                                      fontSize: 14,
+                                                      fontWeight: FontWeight.bold,
+                                                      color: Color(0xFF73878D),
+                                                    ),
                                                   ),
-                                                ),
-                                                const SizedBox(height: 5),
-                                                Text(
-                                                  'Unit2 英作文のルールを学ぶ',
-                                                  style: TextStyle(
-                                                    fontSize: 18,
-                                                    fontWeight: FontWeight.bold,
-                                                    color: Color(0xFF2F4247),
+                                                  const SizedBox(height: 5),
+                                                  Text(
+                                                    'Unit2 英作文のルールを学ぶ',
+                                                    style: TextStyle(
+                                                      fontSize: 18,
+                                                      fontWeight: FontWeight.bold,
+                                                      color: Color(0xFF2F4247),
+                                                    ),
                                                   ),
-                                                ),
-                                              ],
+                                                ],
+                                              ),
                                             ),
                                           ),
                                         ),
                                       ),
                                     ),
+                                    
 
                                     Positioned(
                                       top: 18,
@@ -369,8 +373,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                         height: 130,
                                       ),
                                     ),
-
-                                    
                                   ],
                                 ),
                                 
@@ -381,64 +383,66 @@ class _MyHomePageState extends State<MyHomePage> {
                                   clipBehavior: Clip.none,
                                   children: [
                                     //理科
-                                    Container(
-                                      width: 100,
-                                      height: 100,
-                                      decoration: BoxDecoration(
-                                        gradient: LinearGradient(
-                                          begin: Alignment.topLeft,
-                                          end: Alignment.bottomRight,
-                                          colors: [
-                                            Color(0xFF94DCAF),
-                                            Color(0xFF53B37E),
+                                    GestureDetector(
+                                      child: Container(
+                                        width: 100,
+                                        height: 100,
+                                        decoration: BoxDecoration(
+                                          gradient: LinearGradient(
+                                            begin: Alignment.topLeft,
+                                            end: Alignment.bottomRight,
+                                            colors: [
+                                              Color(0xFF94DCAF),
+                                              Color(0xFF53B37E),
+                                            ],
+                                          ),
+                                          borderRadius: BorderRadius.circular(10),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: Colors.grey.withOpacity(0.5),
+                                              spreadRadius: 1,
+                                              blurRadius: 3,
+                                              offset: Offset(1, 2),
+                                            ),
                                           ],
                                         ),
-                                        borderRadius: BorderRadius.circular(10),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.grey.withOpacity(0.5),
-                                            spreadRadius: 1,
-                                            blurRadius: 3,
-                                            offset: Offset(1, 2),
-                                          ),
-                                        ],
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(4),
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(10),
-                                            gradient: LinearGradient(
-                                              begin: Alignment.topLeft, // 左上から
-                                              end: Alignment.bottomRight, // 右下に
-                                              colors: [
-                                                Colors.white, 
-                                                Colors.white, 
-                                                Color(0xFFEBFFF0),
-                                                Color(0xFFEBFFF0), 
-                                              ],
-                                              stops: [0.0, 0.45, 0.45, 1.0],
-                                              
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(4),
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.circular(10),
+                                              gradient: LinearGradient(
+                                                begin: Alignment.topLeft, // 左上から
+                                                end: Alignment.bottomRight, // 右下に
+                                                colors: [
+                                                  Colors.white, 
+                                                  Colors.white, 
+                                                  Color(0xFFEBFFF0),
+                                                  Color(0xFFEBFFF0), 
+                                                ],
+                                                stops: [0.0, 0.45, 0.45, 1.0],
+                                                
+                                              ),
                                             ),
-                                          ),
 
-                                          child: Padding(
-                                            padding: EdgeInsetsGeometry.symmetric(vertical: 16.0, horizontal: 9.0),
-                                            child: Column(
-                                              mainAxisAlignment: MainAxisAlignment.center,
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              children: [
-                                                const SizedBox(height: 5),
-                                                Text(
-                                                  '身のまわりの植物の観察',
-                                                  textAlign: TextAlign.center,
-                                                  style: TextStyle(
-                                                    fontSize: 12,
-                                                    fontWeight: FontWeight.bold,
-                                                    color: Color(0xFF2F4247),
+                                            child: Padding(
+                                              padding: EdgeInsetsGeometry.symmetric(vertical: 16.0, horizontal: 9.0),
+                                              child: Column(
+                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  const SizedBox(height: 5),
+                                                  Text(
+                                                    '身のまわりの植物の観察',
+                                                    textAlign: TextAlign.center,
+                                                    style: TextStyle(
+                                                      fontSize: 12,
+                                                      fontWeight: FontWeight.bold,
+                                                      color: Color(0xFF2F4247),
+                                                    ),
                                                   ),
-                                                ),
-                                              ],
+                                                ],
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -472,8 +476,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                         
                                       ),
                                     ),
-
-                                    
 
                                     Positioned(
                                       bottom: 5,
@@ -548,8 +550,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         ),
                                       ),
                                     ),
-                                    
-
+                                
                                     Positioned(
                                       top: 0,
                                       right: 0,
@@ -568,7 +569,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 const SizedBox(width: 30),
 
                                 //レッスン一覧
-                                Container(
+                                GestureDetector(
                                   child: Row(
                                     children: [
                                       Image.asset(
@@ -678,48 +679,52 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Image.asset(
-                            'images/home-icon.png',
-                            width: 17,
-                            height: 17,
-                            fit: BoxFit.cover,
-                          ),
-                          const SizedBox(height: 4),
-                          Text(
-                            'ホーム',
-                            style: TextStyle(
-                              fontSize: 10,
-                              fontWeight: FontWeight.bold,
-                              color: const Color.fromARGB(255, 155, 165, 172),
+                      GestureDetector(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Image.asset(
+                              'images/home-icon.png',
+                              width: 17,
+                              height: 17,
+                              fit: BoxFit.cover,
                             ),
-                            
-                          ),
-                        ],
+                            const SizedBox(height: 4),
+                            Text(
+                              'ホーム',
+                              style: TextStyle(
+                                fontSize: 10,
+                                fontWeight: FontWeight.bold,
+                                color: const Color.fromARGB(255, 155, 165, 172),
+                              ),
+                              
+                            ),
+                          ],
+                        ),
                       ),
                       const SizedBox(width: 150),
 
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Image.asset(
-                            'images/settings-icon.png',
-                            width: 17,
-                            height: 17,
-                            fit: BoxFit.cover,
-                          ),
-                          const SizedBox(height: 4),
-                          Text(
-                            '設定',
-                            style: TextStyle(
-                              fontSize: 10,
-                              fontWeight: FontWeight.bold,
-                              color: const Color.fromARGB(255, 155, 165, 172),
+                      GestureDetector(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Image.asset(
+                              'images/settings-icon.png',
+                              width: 17,
+                              height: 17,
+                              fit: BoxFit.cover,
                             ),
-                          ),
-                        ],
+                            const SizedBox(height: 4),
+                            Text(
+                              '設定',
+                              style: TextStyle(
+                                fontSize: 10,
+                                fontWeight: FontWeight.bold,
+                                color: const Color.fromARGB(255, 155, 165, 172),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
