@@ -1,4 +1,7 @@
+// import 'dart:async';
 import 'package:flutter/material.dart';
+import 'widgets/stopwatch_widget.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -30,7 +33,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-
+  
   void _incrementCounter() {
     setState(() {
       _counter++;
@@ -39,6 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       //ボディ
       body: Center(
@@ -491,6 +495,11 @@ class _MyHomePageState extends State<MyHomePage> {
                               ],
                             ),
 
+                            const SizedBox(height: 40),
+
+                            //ストップウォッチのウィジェット
+                            const StopwatchWidget(),
+
                             const Spacer(),
 
                             Row(
@@ -658,6 +667,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
 
+                      
 
                     ],
                   ),
@@ -736,3 +746,5 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+
