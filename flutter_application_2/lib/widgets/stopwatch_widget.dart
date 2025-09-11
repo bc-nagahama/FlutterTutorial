@@ -1,4 +1,4 @@
-import 'dart:async'; //Timerクラスを使うため
+import 'dart:async';
 import 'package:flutter/material.dart';
 
 class StopwatchWidget extends StatefulWidget{
