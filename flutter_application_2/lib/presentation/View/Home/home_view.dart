@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'home_state.dart';
+// import 'home_state.dart';
 import 'home_view_model.dart';
 import '../../../widgets/stopwatch_widget.dart';
 
@@ -9,8 +9,8 @@ class HomeView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref){
-    final state = ref.watch(homeProvider);
-    final notifier = ref.read(homeProvider.notifier);
+    final state = ref.watch(homeProvider); //stateファイルを呼び出す
+    final notifier = ref.read(homeProvider.notifier); //ViewModelファイルを呼び出す
 
     return Scaffold(
       //ボディ
