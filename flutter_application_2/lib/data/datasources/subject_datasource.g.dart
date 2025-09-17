@@ -20,9 +20,10 @@ class _SubjectDatasource implements SubjectDatasource {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<SubjectsResponse> getSubjects() async {
+  Future<SubjectsResponse> getSubjects(SubjectsResponse response) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(response.toJson());
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<SubjectsResponse>(

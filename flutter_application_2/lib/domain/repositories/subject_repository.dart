@@ -1,5 +1,5 @@
-// import 'package:flutter_application_2/domain/entities/subjects_entity.dart';
+import 'package:flutter_application_2/domain/entities/subjects.dart';
 
-// abstract class SubjectRepository {
-//   Future<Subjects> getSubjects();
-// }
+abstract class SubjectRepository {
+  Future<Subjects> getSubjects();
+}

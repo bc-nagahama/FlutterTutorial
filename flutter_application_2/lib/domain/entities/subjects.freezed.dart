@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'subjects_response.dart';
+part of 'subjects.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,22 +13,22 @@ part of 'subjects_response.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$SubjectsResponse {
+mixin _$Subjects {
 
-@JsonKey(name: 'subjects') List<Subject> get subjects;
-/// Create a copy of SubjectsResponse
+ List<Subject> get subjects;
+/// Create a copy of Subjects
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$SubjectsResponseCopyWith<SubjectsResponse> get copyWith => _$SubjectsResponseCopyWithImpl<SubjectsResponse>(this as SubjectsResponse, _$identity);
+$SubjectsCopyWith<Subjects> get copyWith => _$SubjectsCopyWithImpl<Subjects>(this as Subjects, _$identity);
 
-  /// Serializes this SubjectsResponse to a JSON map.
+  /// Serializes this Subjects to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SubjectsResponse&&const DeepCollectionEquality().equals(other.subjects, subjects));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Subjects&&const DeepCollectionEquality().equals(other.subjects, subjects));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -37,18 +37,18 @@ int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(
 
 @override
 String toString() {
-  return 'SubjectsResponse(subjects: $subjects)';
+  return 'Subjects(subjects: $subjects)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $SubjectsResponseCopyWith<$Res>  {
-  factory $SubjectsResponseCopyWith(SubjectsResponse value, $Res Function(SubjectsResponse) _then) = _$SubjectsResponseCopyWithImpl;
+abstract mixin class $SubjectsCopyWith<$Res>  {
+  factory $SubjectsCopyWith(Subjects value, $Res Function(Subjects) _then) = _$SubjectsCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'subjects') List<Subject> subjects
+ List<Subject> subjects
 });
 
 
@@ -56,14 +56,14 @@ $Res call({
 
 }
 /// @nodoc
-class _$SubjectsResponseCopyWithImpl<$Res>
-    implements $SubjectsResponseCopyWith<$Res> {
-  _$SubjectsResponseCopyWithImpl(this._self, this._then);
+class _$SubjectsCopyWithImpl<$Res>
+    implements $SubjectsCopyWith<$Res> {
+  _$SubjectsCopyWithImpl(this._self, this._then);
 
-  final SubjectsResponse _self;
-  final $Res Function(SubjectsResponse) _then;
+  final Subjects _self;
+  final $Res Function(Subjects) _then;
 
-/// Create a copy of SubjectsResponse
+/// Create a copy of Subjects
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? subjects = null,}) {
   return _then(_self.copyWith(
@@ -75,8 +75,8 @@ as List<Subject>,
 }
 
 
-/// Adds pattern-matching-related methods to [SubjectsResponse].
-extension SubjectsResponsePatterns on SubjectsResponse {
+/// Adds pattern-matching-related methods to [Subjects].
+extension SubjectsPatterns on Subjects {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -89,10 +89,10 @@ extension SubjectsResponsePatterns on SubjectsResponse {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _SubjectsResponse value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Subjects value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _SubjectsResponse() when $default != null:
+case _Subjects() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -111,10 +111,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _SubjectsResponse value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Subjects value)  $default,){
 final _that = this;
 switch (_that) {
-case _SubjectsResponse():
+case _Subjects():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -132,10 +132,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _SubjectsResponse value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Subjects value)?  $default,){
 final _that = this;
 switch (_that) {
-case _SubjectsResponse() when $default != null:
+case _Subjects() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -153,9 +153,9 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'subjects')  List<Subject> subjects)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<Subject> subjects)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _SubjectsResponse() when $default != null:
+case _Subjects() when $default != null:
 return $default(_that.subjects);case _:
   return orElse();
 
@@ -174,9 +174,9 @@ return $default(_that.subjects);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'subjects')  List<Subject> subjects)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<Subject> subjects)  $default,) {final _that = this;
 switch (_that) {
-case _SubjectsResponse():
+case _Subjects():
 return $default(_that.subjects);case _:
   throw StateError('Unexpected subclass');
 
@@ -194,9 +194,9 @@ return $default(_that.subjects);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'subjects')  List<Subject> subjects)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<Subject> subjects)?  $default,) {final _that = this;
 switch (_that) {
-case _SubjectsResponse() when $default != null:
+case _Subjects() when $default != null:
 return $default(_that.subjects);case _:
   return null;
 
@@ -208,32 +208,32 @@ return $default(_that.subjects);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _SubjectsResponse implements SubjectsResponse {
-  const _SubjectsResponse({@JsonKey(name: 'subjects') final  List<Subject> subjects = const []}): _subjects = subjects;
-  factory _SubjectsResponse.fromJson(Map<String, dynamic> json) => _$SubjectsResponseFromJson(json);
+class _Subjects implements Subjects {
+  const _Subjects({final  List<Subject> subjects = const []}): _subjects = subjects;
+  factory _Subjects.fromJson(Map<String, dynamic> json) => _$SubjectsFromJson(json);
 
  final  List<Subject> _subjects;
-@override@JsonKey(name: 'subjects') List<Subject> get subjects {
+@override@JsonKey() List<Subject> get subjects {
   if (_subjects is EqualUnmodifiableListView) return _subjects;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_subjects);
 }
 
 
-/// Create a copy of SubjectsResponse
+/// Create a copy of Subjects
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$SubjectsResponseCopyWith<_SubjectsResponse> get copyWith => __$SubjectsResponseCopyWithImpl<_SubjectsResponse>(this, _$identity);
+_$SubjectsCopyWith<_Subjects> get copyWith => __$SubjectsCopyWithImpl<_Subjects>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$SubjectsResponseToJson(this, );
+  return _$SubjectsToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SubjectsResponse&&const DeepCollectionEquality().equals(other._subjects, _subjects));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Subjects&&const DeepCollectionEquality().equals(other._subjects, _subjects));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -242,18 +242,18 @@ int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(
 
 @override
 String toString() {
-  return 'SubjectsResponse(subjects: $subjects)';
+  return 'Subjects(subjects: $subjects)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$SubjectsResponseCopyWith<$Res> implements $SubjectsResponseCopyWith<$Res> {
-  factory _$SubjectsResponseCopyWith(_SubjectsResponse value, $Res Function(_SubjectsResponse) _then) = __$SubjectsResponseCopyWithImpl;
+abstract mixin class _$SubjectsCopyWith<$Res> implements $SubjectsCopyWith<$Res> {
+  factory _$SubjectsCopyWith(_Subjects value, $Res Function(_Subjects) _then) = __$SubjectsCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'subjects') List<Subject> subjects
+ List<Subject> subjects
 });
 
 
@@ -261,17 +261,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$SubjectsResponseCopyWithImpl<$Res>
-    implements _$SubjectsResponseCopyWith<$Res> {
-  __$SubjectsResponseCopyWithImpl(this._self, this._then);
+class __$SubjectsCopyWithImpl<$Res>
+    implements _$SubjectsCopyWith<$Res> {
+  __$SubjectsCopyWithImpl(this._self, this._then);
 
-  final _SubjectsResponse _self;
-  final $Res Function(_SubjectsResponse) _then;
+  final _Subjects _self;
+  final $Res Function(_Subjects) _then;
 
-/// Create a copy of SubjectsResponse
+/// Create a copy of Subjects
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? subjects = null,}) {
-  return _then(_SubjectsResponse(
+  return _then(_Subjects(
 subjects: null == subjects ? _self._subjects : subjects // ignore: cast_nullable_to_non_nullable
 as List<Subject>,
   ));
@@ -284,7 +284,7 @@ as List<Subject>,
 /// @nodoc
 mixin _$Subject {
 
-@JsonKey(name: 'subjectName') String get subjectName;@JsonKey(name: 'unit') Unit get unit;
+ String get subjectName; Unit get unit;
 /// Create a copy of Subject
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -317,7 +317,7 @@ abstract mixin class $SubjectCopyWith<$Res>  {
   factory $SubjectCopyWith(Subject value, $Res Function(Subject) _then) = _$SubjectCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'subjectName') String subjectName,@JsonKey(name: 'unit') Unit unit
+ String subjectName, Unit unit
 });
 
 
@@ -432,7 +432,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'subjectName')  String subjectName, @JsonKey(name: 'unit')  Unit unit)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String subjectName,  Unit unit)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Subject() when $default != null:
 return $default(_that.subjectName,_that.unit);case _:
@@ -453,7 +453,7 @@ return $default(_that.subjectName,_that.unit);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'subjectName')  String subjectName, @JsonKey(name: 'unit')  Unit unit)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String subjectName,  Unit unit)  $default,) {final _that = this;
 switch (_that) {
 case _Subject():
 return $default(_that.subjectName,_that.unit);case _:
@@ -473,7 +473,7 @@ return $default(_that.subjectName,_that.unit);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'subjectName')  String subjectName, @JsonKey(name: 'unit')  Unit unit)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String subjectName,  Unit unit)?  $default,) {final _that = this;
 switch (_that) {
 case _Subject() when $default != null:
 return $default(_that.subjectName,_that.unit);case _:
@@ -488,11 +488,11 @@ return $default(_that.subjectName,_that.unit);case _:
 @JsonSerializable()
 
 class _Subject implements Subject {
-  const _Subject({@JsonKey(name: 'subjectName') this.subjectName = '', @JsonKey(name: 'unit') this.unit = const Unit()});
+  const _Subject({this.subjectName = '', this.unit = const Unit()});
   factory _Subject.fromJson(Map<String, dynamic> json) => _$SubjectFromJson(json);
 
-@override@JsonKey(name: 'subjectName') final  String subjectName;
-@override@JsonKey(name: 'unit') final  Unit unit;
+@override@JsonKey() final  String subjectName;
+@override@JsonKey() final  Unit unit;
 
 /// Create a copy of Subject
 /// with the given fields replaced by the non-null parameter values.
@@ -527,7 +527,7 @@ abstract mixin class _$SubjectCopyWith<$Res> implements $SubjectCopyWith<$Res> {
   factory _$SubjectCopyWith(_Subject value, $Res Function(_Subject) _then) = __$SubjectCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'subjectName') String subjectName,@JsonKey(name: 'unit') Unit unit
+ String subjectName, Unit unit
 });
 
 
@@ -568,7 +568,7 @@ $UnitCopyWith<$Res> get unit {
 /// @nodoc
 mixin _$Unit {
 
-@JsonKey(name: 'unitName') String get unitName;@JsonKey(name: 'grade') String get grade;@JsonKey(name: 'lesson') Lesson get lesson;
+ String get unitName; String get grade; Lesson get lesson;
 /// Create a copy of Unit
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -601,7 +601,7 @@ abstract mixin class $UnitCopyWith<$Res>  {
   factory $UnitCopyWith(Unit value, $Res Function(Unit) _then) = _$UnitCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'unitName') String unitName,@JsonKey(name: 'grade') String grade,@JsonKey(name: 'lesson') Lesson lesson
+ String unitName, String grade, Lesson lesson
 });
 
 
@@ -717,7 +717,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'unitName')  String unitName, @JsonKey(name: 'grade')  String grade, @JsonKey(name: 'lesson')  Lesson lesson)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String unitName,  String grade,  Lesson lesson)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Unit() when $default != null:
 return $default(_that.unitName,_that.grade,_that.lesson);case _:
@@ -738,7 +738,7 @@ return $default(_that.unitName,_that.grade,_that.lesson);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'unitName')  String unitName, @JsonKey(name: 'grade')  String grade, @JsonKey(name: 'lesson')  Lesson lesson)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String unitName,  String grade,  Lesson lesson)  $default,) {final _that = this;
 switch (_that) {
 case _Unit():
 return $default(_that.unitName,_that.grade,_that.lesson);case _:
@@ -758,7 +758,7 @@ return $default(_that.unitName,_that.grade,_that.lesson);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'unitName')  String unitName, @JsonKey(name: 'grade')  String grade, @JsonKey(name: 'lesson')  Lesson lesson)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String unitName,  String grade,  Lesson lesson)?  $default,) {final _that = this;
 switch (_that) {
 case _Unit() when $default != null:
 return $default(_that.unitName,_that.grade,_that.lesson);case _:
@@ -773,12 +773,12 @@ return $default(_that.unitName,_that.grade,_that.lesson);case _:
 @JsonSerializable()
 
 class _Unit implements Unit {
-  const _Unit({@JsonKey(name: 'unitName') this.unitName = '', @JsonKey(name: 'grade') this.grade = '', @JsonKey(name: 'lesson') this.lesson = const Lesson()});
+  const _Unit({this.unitName = '', this.grade = '', this.lesson = const Lesson()});
   factory _Unit.fromJson(Map<String, dynamic> json) => _$UnitFromJson(json);
 
-@override@JsonKey(name: 'unitName') final  String unitName;
-@override@JsonKey(name: 'grade') final  String grade;
-@override@JsonKey(name: 'lesson') final  Lesson lesson;
+@override@JsonKey() final  String unitName;
+@override@JsonKey() final  String grade;
+@override@JsonKey() final  Lesson lesson;
 
 /// Create a copy of Unit
 /// with the given fields replaced by the non-null parameter values.
@@ -813,7 +813,7 @@ abstract mixin class _$UnitCopyWith<$Res> implements $UnitCopyWith<$Res> {
   factory _$UnitCopyWith(_Unit value, $Res Function(_Unit) _then) = __$UnitCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'unitName') String unitName,@JsonKey(name: 'grade') String grade,@JsonKey(name: 'lesson') Lesson lesson
+ String unitName, String grade, Lesson lesson
 });
 
 
@@ -855,7 +855,7 @@ $LessonCopyWith<$Res> get lesson {
 /// @nodoc
 mixin _$Lesson {
 
-@JsonKey(name: 'lessonName') String get lessonName;@JsonKey(name: 'difficulty') int get difficulty;
+ String get lessonName; int get difficulty;
 /// Create a copy of Lesson
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -888,7 +888,7 @@ abstract mixin class $LessonCopyWith<$Res>  {
   factory $LessonCopyWith(Lesson value, $Res Function(Lesson) _then) = _$LessonCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'lessonName') String lessonName,@JsonKey(name: 'difficulty') int difficulty
+ String lessonName, int difficulty
 });
 
 
@@ -994,7 +994,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'lessonName')  String lessonName, @JsonKey(name: 'difficulty')  int difficulty)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String lessonName,  int difficulty)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Lesson() when $default != null:
 return $default(_that.lessonName,_that.difficulty);case _:
@@ -1015,7 +1015,7 @@ return $default(_that.lessonName,_that.difficulty);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'lessonName')  String lessonName, @JsonKey(name: 'difficulty')  int difficulty)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String lessonName,  int difficulty)  $default,) {final _that = this;
 switch (_that) {
 case _Lesson():
 return $default(_that.lessonName,_that.difficulty);case _:
@@ -1035,7 +1035,7 @@ return $default(_that.lessonName,_that.difficulty);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'lessonName')  String lessonName, @JsonKey(name: 'difficulty')  int difficulty)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String lessonName,  int difficulty)?  $default,) {final _that = this;
 switch (_that) {
 case _Lesson() when $default != null:
 return $default(_that.lessonName,_that.difficulty);case _:
@@ -1050,11 +1050,11 @@ return $default(_that.lessonName,_that.difficulty);case _:
 @JsonSerializable()
 
 class _Lesson implements Lesson {
-  const _Lesson({@JsonKey(name: 'lessonName') this.lessonName = '', @JsonKey(name: 'difficulty') this.difficulty = 0});
+  const _Lesson({this.lessonName = '', this.difficulty = 0});
   factory _Lesson.fromJson(Map<String, dynamic> json) => _$LessonFromJson(json);
 
-@override@JsonKey(name: 'lessonName') final  String lessonName;
-@override@JsonKey(name: 'difficulty') final  int difficulty;
+@override@JsonKey() final  String lessonName;
+@override@JsonKey() final  int difficulty;
 
 /// Create a copy of Lesson
 /// with the given fields replaced by the non-null parameter values.
@@ -1089,7 +1089,7 @@ abstract mixin class _$LessonCopyWith<$Res> implements $LessonCopyWith<$Res> {
   factory _$LessonCopyWith(_Lesson value, $Res Function(_Lesson) _then) = __$LessonCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'lessonName') String lessonName,@JsonKey(name: 'difficulty') int difficulty
+ String lessonName, int difficulty
 });
 
 

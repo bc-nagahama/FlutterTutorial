@@ -13,15 +13,15 @@ class HomeView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref){
     final state = ref.watch(homeProvider);
     final notifier = ref.read(homeProvider.notifier);
-    final subjectsAsync = ref.watch(subjectsProvider);
+    // final subjectsAsync = ref.watch(subjectsProvider);
 
-    subjectsAsync.when(
-      data: (data) {
-        print('取得した科目数：${data.subjects.length}');
-      },
-      loading: () => print('読み込み中…'),
-      error: (e, st) => print('エラー： $e'),
-    );
+    // subjectsAsync.when(
+    //   data: (data) {
+    //     print('取得した科目数：${data.subjects.length}');
+    //   },
+    //   loading: () => print('読み込み中…'),
+    //   error: (e, st) => print('エラー： $e'),
+    // );
 
     return Scaffold(
       //ボディ

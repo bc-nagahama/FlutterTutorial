@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'subjects_response.dart';
+part of 'subjects.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_SubjectsResponse _$SubjectsResponseFromJson(Map<String, dynamic> json) =>
-    _SubjectsResponse(
-      subjects:
-          (json['subjects'] as List<dynamic>?)
-              ?.map((e) => Subject.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const [],
-    );
+_Subjects _$SubjectsFromJson(Map<String, dynamic> json) => _Subjects(
+  subjects:
+      (json['subjects'] as List<dynamic>?)
+          ?.map((e) => Subject.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      const [],
+);
 
-Map<String, dynamic> _$SubjectsResponseToJson(_SubjectsResponse instance) =>
-    <String, dynamic>{'subjects': instance.subjects};
+Map<String, dynamic> _$SubjectsToJson(_Subjects instance) => <String, dynamic>{
+  'subjects': instance.subjects,
+};
 
 _Subject _$SubjectFromJson(Map<String, dynamic> json) => _Subject(
   subjectName: json['subjectName'] as String? ?? '',

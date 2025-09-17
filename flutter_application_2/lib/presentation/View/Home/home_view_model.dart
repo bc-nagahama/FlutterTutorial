@@ -1,42 +1,47 @@
+import 'dart:developer';
+import 'package:flutter_application_2/data/providers/subject_repository_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_application_2/data/datasources/subject_datasource.dart';
-import 'package:flutter_application_2/data/dtos/subjects_response.dart';
 import 'home_state.dart';
+import 'package:flutter_application_2/data/repositories/subject_repository_impl.dart';
+import 'package:flutter_application_2/domain/repositories/subject_repository.dart';
 
-//dioのprovider
-final dioProvider = Provider((ref) => Dio());
-
-//datasourceのprovider
-final subjectDatasourceProvider = Provider<SubjectDatasource>((ref) {
-  final dio = ref.watch(dioProvider);
-  return SubjectDatasource(dio);
-});
-
-//subjectsのprovider
-final subjectsProvider = FutureProvider<SubjectsResponse>((ref) async{
-  final datasource = ref.watch(subjectDatasourceProvider);
-  final response = await datasource.getSubjects();
-
-  //console.出力
-  for(var s in response.subjects){
-    print('科目：${s.subjectName}, 単元：${s.unit?.unitName}, レッスン：${s.unit?.lesson?.lessonName}');
-  }
-
-  return response;
-});
-
-
+final homeProvider = StateNotifierProvider<HomeViewModel, HomeState>(
+  (ref) => HomeViewModel(
+    ref.read(subjectRepositoryProvider)
+  ),
+);
 
 class HomeViewModel extends StateNotifier<HomeState>{
-  HomeViewModel() : super(HomeState());
+  HomeViewModel(
+    this.subjectRepository
+  ) : super(HomeState()){
+    initialize();
+  }
+
+  final SubjectRepository subjectRepository;
   
-  void incrementCounter() {
+  Future<void> incrementCounter() async{
     state = state.copyWith(counter: state.counter + 1);
+  }
+  
+  Future<void> initialize() async{
+    final subjectList = await subjectRepository.getSubjects();
+
+    state = state.copyWith(
+      subjectName1: subjectList.subjects[0].subjectName,
+      subjectName2: subjectList.subjects[1].subjectName,
+      unitName1: subjectList.subjects[0].unit.unitName,
+      unitName2: subjectList.subjects[1].unit.unitName,
+      grade1: subjectList.subjects[0].unit.grade,
+      grade2: subjectList.subjects[1].unit.grade,
+      lessonName1: subjectList.subjects[0].unit.lesson.lessonName,
+      lessonName2: subjectList.subjects[1].unit.lesson.lessonName,
+      difficulty1: subjectList.subjects[0].unit.lesson.difficulty,
+      difficulty2: subjectList.subjects[1].unit.lesson.difficulty,
+    );
   }
 }
 
-final homeProvider = 
-  StateNotifierProvider<HomeViewModel, HomeState>((ref) {
-   return HomeViewModel();
-});
+
