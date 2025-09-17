@@ -1,0 +1,26 @@
+{
+    "subjects": [
+        {
+            "subjectName": "数学",
+            "unit": {
+                "unitName": "方程式",
+                "grade": "中1",
+                "lesson": {
+                    "lessonName": "方程式の解き方",
+                    "difficulty": 1
+                }
+            }
+        },
+         {
+            "subjectName": "理科",
+            "unit": {
+                "unitName": "気体",
+                "grade": "中2",
+                "lesson": {
+                    "lessonName": "気体の性質",
+                    "difficulty": 3
+                }
+            }
+        }
+    ]
+}

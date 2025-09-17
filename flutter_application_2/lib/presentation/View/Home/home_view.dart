@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'home_state.dart';
+// import 'package:dio/dio.dart';
+// import 'package:flutter_application_2/data/datasources/subject_datasource.dart';
+// import 'package:flutter_application_2/data/dtos/subjects_response.dart';
 import 'home_view_model.dart';
 import '../../../widgets/stopwatch_widget.dart';
 
@@ -11,6 +13,15 @@ class HomeView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref){
     final state = ref.watch(homeProvider);
     final notifier = ref.read(homeProvider.notifier);
+    final subjectsAsync = ref.watch(subjectsProvider);
+
+    subjectsAsync.when(
+      data: (data) {
+        print('取得した科目数：${data.subjects.length}');
+      },
+      loading: () => print('読み込み中…'),
+      error: (e, st) => print('エラー： $e'),
+    );
 
     return Scaffold(
       //ボディ
