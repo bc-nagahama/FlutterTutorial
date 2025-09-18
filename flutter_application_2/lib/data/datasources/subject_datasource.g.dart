@@ -10,7 +10,7 @@ part of 'subject_datasource.dart';
 
 class _SubjectDatasource implements SubjectDatasource {
   _SubjectDatasource(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'http://127.0.0.1:5502';
+    baseUrl ??= 'http://127.0.0.1:5502/flutter_application_2';
   }
 
   final Dio _dio;

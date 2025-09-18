@@ -4,7 +4,7 @@ import 'package:retrofit/retrofit.dart';
 
 part 'subject_datasource.g.dart';
 
-@RestApi(baseUrl: 'http://127.0.0.1:5502')
+@RestApi(baseUrl: 'http://127.0.0.1:5502/flutter_application_2')
 
 abstract class SubjectDatasource{
   factory SubjectDatasource(Dio dio, {String? baseUrl}) = _SubjectDatasource;
