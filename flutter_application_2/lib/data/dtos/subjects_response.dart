@@ -1,4 +1,4 @@
-import 'package:flutter_application_2/domain/entities/subjects.dart';
+import 'package:flutter_application_2/domain/entities/subjects.dart' as entity;
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'subjects_response.freezed.dart';
@@ -48,16 +48,21 @@ abstract class Lesson with _$Lesson{
    _$LessonFromJson(json);
 }
 
+extension SubjectsResponseExtension on SubjectsResponse {
+  entity.Subjects toEntity() => entity.Subjects(
+    subjects: subjects.map((e) => e.toEntity()).toList(),
+  );
+}
+
 extension SubjectExtension on Subject{
-  Subject toEntity() =>
-    Subject(
-      subjectName: subjectName, 
-      unit: unit.map((e) => e.toEntity()),
-    );
+  entity.Subject toEntity() => entity.Subject(
+    subjectName: subjectName, 
+    unit: unit.map((e) => e.toEntity()),
+  );
 }
 
 extension UnitExtension on Unit{
-  Unit toEntity() => Unit(
+  entity.Unit toEntity() => entity.Unit(
     unitName: unitName,
     grade: grade,
     lesson: lesson.map((e) => e.toEntity()),
@@ -65,7 +70,7 @@ extension UnitExtension on Unit{
 }
 
 extension LessonExtension on Lesson{
-  Lesson toEntity() => Lesson(
+  entity.Lesson toEntity() => entity.Lesson(
     lessonName: lessonName,
     difficulty: difficulty,
   );
