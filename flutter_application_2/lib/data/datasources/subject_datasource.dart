@@ -10,5 +10,5 @@ abstract class SubjectDatasource{
   factory SubjectDatasource(Dio dio, {String? baseUrl}) = _SubjectDatasource;
 
   @GET('/practice.json')
-  Future<SubjectsResponse> getSubjects(@Queries() SubjectsResponse response);
+  Future<SubjectsResponse> getSubjects();
 }
