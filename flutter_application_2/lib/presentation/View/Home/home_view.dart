@@ -14,6 +14,7 @@ class HomeView extends ConsumerWidget {
     final state = ref.watch(homeProvider);
     final notifier = ref.read(homeProvider.notifier);
     final int maxDifficulty = 3;
+    final mockState = ref.watch(mockHomeProvider);
 
     return Scaffold(
       //ボディ
@@ -247,7 +248,7 @@ class HomeView extends ConsumerWidget {
                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
-                                                    state.unitName1,
+                                                    mockState.unitName1,
                                                     style: TextStyle(
                                                       fontSize: 14,
                                                       fontWeight: FontWeight.bold,
@@ -256,7 +257,7 @@ class HomeView extends ConsumerWidget {
                                                   ),
                                                   const SizedBox(height: 5),
                                                   Text(
-                                                    state.lessonName1,
+                                                    mockState.lessonName1,
                                                     style: TextStyle(
                                                       fontSize: 18,
                                                       fontWeight: FontWeight.bold,
@@ -280,7 +281,7 @@ class HomeView extends ConsumerWidget {
                                         height: 22,
                                         child: Row(
                                           children: List.generate(maxDifficulty, (index){
-                                            final isActive = index < state.difficulty1;
+                                            final isActive = index < mockState.difficulty1;
                                             return Padding(
                                               padding: const EdgeInsets.only(right: 8),
                                               child: Image.asset(
@@ -308,7 +309,7 @@ class HomeView extends ConsumerWidget {
                                           mainAxisAlignment: MainAxisAlignment.center,
                                           children: [
                                             Text(
-                                              state.grade1,
+                                              mockState.grade1,
                                                 textAlign: TextAlign.center,
                                                 style: TextStyle(
                                                 color: Colors.white, 
@@ -317,7 +318,7 @@ class HomeView extends ConsumerWidget {
                                               ),
                                             ),
                                             Text(
-                                              state.subjectName1,
+                                              mockState.subjectName1,
                                                 textAlign: TextAlign.center,
                                                 style: TextStyle(
                                                 color: Colors.white, 

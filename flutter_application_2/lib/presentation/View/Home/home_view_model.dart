@@ -2,10 +2,20 @@ import 'package:flutter_application_2/data/providers/subject_repository_provider
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'home_state.dart';
 import 'package:flutter_application_2/domain/repositories/subject_repository.dart';
+import 'package:flutter_application_2/data/repositories/mock/subject_repository_mock.dart';
 
 final homeProvider = StateNotifierProvider<HomeViewModel, HomeState>(
   (ref) => HomeViewModel(
     ref.read(subjectRepositoryProvider)
+  ),
+);
+
+///
+///mock用
+///
+final mockHomeProvider = StateNotifierProvider<HomeViewModel, HomeState>(
+  (ref) => HomeViewModel(
+    SubjectRepositoryMock(),
   ),
 );
 
