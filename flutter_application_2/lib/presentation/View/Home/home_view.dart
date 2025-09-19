@@ -13,15 +13,7 @@ class HomeView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref){
     final state = ref.watch(homeProvider);
     final notifier = ref.read(homeProvider.notifier);
-    // final subjectsAsync = ref.watch(subjectsProvider);
-
-    // subjectsAsync.when(
-    //   data: (data) {
-    //     print('取得した科目数：${data.subjects.length}');
-    //   },
-    //   loading: () => print('読み込み中…'),
-    //   error: (e, st) => print('エラー： $e'),
-    // );
+    final int maxDifficulty = 3;
 
     return Scaffold(
       //ボディ
@@ -255,7 +247,7 @@ class HomeView extends ConsumerWidget {
                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
-                                                    '正負の数',
+                                                    state.unitName1,
                                                     style: TextStyle(
                                                       fontSize: 14,
                                                       fontWeight: FontWeight.bold,
@@ -264,7 +256,7 @@ class HomeView extends ConsumerWidget {
                                                   ),
                                                   const SizedBox(height: 5),
                                                   Text(
-                                                    'Unit2 英作文のルールを学ぶ',
+                                                    state.lessonName1,
                                                     style: TextStyle(
                                                       fontSize: 18,
                                                       fontWeight: FontWeight.bold,
@@ -283,32 +275,22 @@ class HomeView extends ConsumerWidget {
                                     Positioned(
                                       top: 18,
                                       right: 16,
-                                      child: Container(
+                                      child: SizedBox(
                                         width: 82, 
                                         height: 22,
                                         child: Row(
-                                          children: [
-                                            Image.asset(
-                                              'images/fire-active-icon.png',
-                                              width: 18,
-                                              height: 18,
-                                              fit: BoxFit.cover,
-                                            ),
-                                            const SizedBox(width: 8),
-                                            Image.asset(
-                                              'images/fire-icon.png',
-                                              width: 18,
-                                              height: 18,
-                                              fit: BoxFit.cover,
-                                            ),
-                                            const SizedBox(width: 8),
-                                            Image.asset(
-                                              'images/fire-icon.png',
-                                              width: 18,
-                                              height: 18,
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ],
+                                          children: List.generate(maxDifficulty, (index){
+                                            final isActive = index < state.difficulty1;
+                                            return Padding(
+                                              padding: const EdgeInsets.only(right: 8),
+                                              child: Image.asset(
+                                                isActive ? 'images/fire-active-icon.png' : 'images/fire-icon.png',
+                                                width: 18,
+                                                height: 18,
+                                                fit: BoxFit.cover,
+                                              ),
+                                            );
+                                          }),
                                         ),
                                       )
                                     ),
@@ -326,7 +308,7 @@ class HomeView extends ConsumerWidget {
                                           mainAxisAlignment: MainAxisAlignment.center,
                                           children: [
                                             Text(
-                                              '中1',
+                                              state.grade1,
                                                 textAlign: TextAlign.center,
                                                 style: TextStyle(
                                                 color: Colors.white, 
@@ -335,7 +317,7 @@ class HomeView extends ConsumerWidget {
                                               ),
                                             ),
                                             Text(
-                                              '数学',
+                                              state.subjectName1,
                                                 textAlign: TextAlign.center,
                                                 style: TextStyle(
                                                 color: Colors.white, 
@@ -417,7 +399,7 @@ class HomeView extends ConsumerWidget {
                                                 children: [
                                                   const SizedBox(height: 5),
                                                   Text(
-                                                    '身のまわりの植物の観察',
+                                                    state.lessonName2,
                                                     textAlign: TextAlign.center,
                                                     style: TextStyle(
                                                       fontSize: 12,
@@ -447,7 +429,7 @@ class HomeView extends ConsumerWidget {
                                           mainAxisAlignment: MainAxisAlignment.center,
                                           children: [
                                             Text(
-                                              '理科',
+                                              state.subjectName2,
                                                 textAlign: TextAlign.center,
                                                 style: TextStyle(
                                                 color: Colors.white, 
