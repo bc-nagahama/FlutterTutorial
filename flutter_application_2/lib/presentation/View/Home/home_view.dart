@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/presentation/view/home/parts/difficulty.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'home_state.dart';
-import 'home_view_model.dart';
+import 'package:flutter_application_2/presentation/view/home/parts/difficulty.dart';
+import 'package:flutter_application_2/presentation/view/home/home_view_model.dart';
 import '../../../widgets/stopwatch_widget.dart';
 
 class HomeView extends ConsumerWidget {
@@ -11,6 +12,7 @@ class HomeView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref){
     final state = ref.watch(homeProvider);
     final notifier = ref.read(homeProvider.notifier);
+    final mockState = ref.watch(mockHomeProvider);
 
     return Scaffold(
       //ボディ
@@ -244,7 +246,7 @@ class HomeView extends ConsumerWidget {
                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
-                                                    '正負の数',
+                                                    state.subject1.unit.unitName,
                                                     style: TextStyle(
                                                       fontSize: 14,
                                                       fontWeight: FontWeight.bold,
@@ -253,7 +255,7 @@ class HomeView extends ConsumerWidget {
                                                   ),
                                                   const SizedBox(height: 5),
                                                   Text(
-                                                    'Unit2 英作文のルールを学ぶ',
+                                                    state.subject1.unit.lesson.lessonName,
                                                     style: TextStyle(
                                                       fontSize: 18,
                                                       fontWeight: FontWeight.bold,
@@ -272,33 +274,10 @@ class HomeView extends ConsumerWidget {
                                     Positioned(
                                       top: 18,
                                       right: 16,
-                                      child: Container(
+                                      child: SizedBox(
                                         width: 82, 
                                         height: 22,
-                                        child: Row(
-                                          children: [
-                                            Image.asset(
-                                              'images/fire-active-icon.png',
-                                              width: 18,
-                                              height: 18,
-                                              fit: BoxFit.cover,
-                                            ),
-                                            const SizedBox(width: 8),
-                                            Image.asset(
-                                              'images/fire-icon.png',
-                                              width: 18,
-                                              height: 18,
-                                              fit: BoxFit.cover,
-                                            ),
-                                            const SizedBox(width: 8),
-                                            Image.asset(
-                                              'images/fire-icon.png',
-                                              width: 18,
-                                              height: 18,
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ],
-                                        ),
+                                        child: difficulty(state: state),
                                       )
                                     ),
 
@@ -315,7 +294,7 @@ class HomeView extends ConsumerWidget {
                                           mainAxisAlignment: MainAxisAlignment.center,
                                           children: [
                                             Text(
-                                              '中1',
+                                              state.subject1.unit.grade,
                                                 textAlign: TextAlign.center,
                                                 style: TextStyle(
                                                 color: Colors.white, 
@@ -324,7 +303,7 @@ class HomeView extends ConsumerWidget {
                                               ),
                                             ),
                                             Text(
-                                              '数学',
+                                              state.subject1.subjectName,
                                                 textAlign: TextAlign.center,
                                                 style: TextStyle(
                                                 color: Colors.white, 
@@ -406,7 +385,7 @@ class HomeView extends ConsumerWidget {
                                                 children: [
                                                   const SizedBox(height: 5),
                                                   Text(
-                                                    '身のまわりの植物の観察',
+                                                    mockState.subject2.unit.lesson.lessonName,
                                                     textAlign: TextAlign.center,
                                                     style: TextStyle(
                                                       fontSize: 12,
@@ -436,7 +415,7 @@ class HomeView extends ConsumerWidget {
                                           mainAxisAlignment: MainAxisAlignment.center,
                                           children: [
                                             Text(
-                                              '理科',
+                                              mockState.subject2.subjectName,
                                                 textAlign: TextAlign.center,
                                                 style: TextStyle(
                                                 color: Colors.white, 

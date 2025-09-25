@@ -1,7 +1,7 @@
 // import 'dart:async';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
-import 'presentation/View/Home/home_view.dart';
+import 'presentation/view/home/home_view.dart';
 
 void main() {
   runApp(
