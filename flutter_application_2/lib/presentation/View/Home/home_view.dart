@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/presentation/view/home/parts/difficulty.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_application_2/presentation/view/home/parts/difficulty.dart';
 import 'package:flutter_application_2/presentation/view/home/home_view_model.dart';
-import '../../../widgets/stopwatch_widget.dart';
+import 'package:flutter_application_2/presentation/view/home/parts/stopwatch.dart';
 
 class HomeView extends ConsumerWidget {
   const HomeView({super.key});
@@ -446,7 +445,7 @@ class HomeView extends ConsumerWidget {
                             const SizedBox(height: 40),
 
                             //ストップウォッチのウィジェット
-                            const StopwatchWidget(),
+                            const Stopwatch(),
 
                             const Spacer(),
 

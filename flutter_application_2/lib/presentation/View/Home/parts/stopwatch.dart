@@ -1,14 +1,14 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
-class StopwatchWidget extends StatefulWidget{
-  const StopwatchWidget({super.key});
+class Stopwatch extends StatefulWidget{
+  const Stopwatch({super.key});
 
   @override
-  State<StopwatchWidget> createState() => _StopwatchWidgetState();
+  State<Stopwatch> createState() => _StopwatchWidgetState();
 }
 
-class _StopwatchWidgetState extends State<StopwatchWidget>{
+class _StopwatchWidgetState extends State<Stopwatch>{
   int _seconds = 0;
   Timer? _timer;
 
