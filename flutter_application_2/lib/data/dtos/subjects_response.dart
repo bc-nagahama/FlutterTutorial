@@ -1,4 +1,5 @@
 import 'package:flutter_application_2/domain/entities/subjects.dart' as entity;
+import 'package:flutter_application_2/domain/enums/difficulty.dart' as e;
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'subjects_response.freezed.dart';
@@ -72,6 +73,6 @@ extension UnitExtension on Unit{
 extension LessonExtension on Lesson{
   entity.Lesson toEntity() => entity.Lesson(
     lessonName: lessonName,
-    difficulty: difficulty,
+    difficulty: e.Difficulty.fromId(difficulty),
   );
 }
