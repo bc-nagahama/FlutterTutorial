@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/presentation/view/home/parts/difficulty.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-// import 'package:dio/dio.dart';
-// import 'package:flutter_application_2/data/datasources/subject_datasource.dart';
-// import 'package:flutter_application_2/data/dtos/subjects_response.dart';
-import 'home_view_model.dart';
+import 'package:flutter_application_2/presentation/view/home/parts/difficulty.dart';
+import 'package:flutter_application_2/presentation/view/home/home_view_model.dart';
 import '../../../widgets/stopwatch_widget.dart';
 
 class HomeView extends ConsumerWidget {
@@ -13,7 +12,6 @@ class HomeView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref){
     final state = ref.watch(homeProvider);
     final notifier = ref.read(homeProvider.notifier);
-    final int maxDifficulty = 3;
     final mockState = ref.watch(mockHomeProvider);
 
     return Scaffold(
@@ -248,7 +246,7 @@ class HomeView extends ConsumerWidget {
                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
-                                                    mockState.unitName1,
+                                                    state.subject1.unit.unitName,
                                                     style: TextStyle(
                                                       fontSize: 14,
                                                       fontWeight: FontWeight.bold,
@@ -257,7 +255,7 @@ class HomeView extends ConsumerWidget {
                                                   ),
                                                   const SizedBox(height: 5),
                                                   Text(
-                                                    mockState.lessonName1,
+                                                    state.subject1.unit.lesson.lessonName,
                                                     style: TextStyle(
                                                       fontSize: 18,
                                                       fontWeight: FontWeight.bold,
@@ -279,20 +277,7 @@ class HomeView extends ConsumerWidget {
                                       child: SizedBox(
                                         width: 82, 
                                         height: 22,
-                                        child: Row(
-                                          children: List.generate(maxDifficulty, (index){
-                                            final isActive = index < mockState.difficulty1;
-                                            return Padding(
-                                              padding: const EdgeInsets.only(right: 8),
-                                              child: Image.asset(
-                                                isActive ? 'images/fire-active-icon.png' : 'images/fire-icon.png',
-                                                width: 18,
-                                                height: 18,
-                                                fit: BoxFit.cover,
-                                              ),
-                                            );
-                                          }),
-                                        ),
+                                        child: difficulty(state: state),
                                       )
                                     ),
 
@@ -309,7 +294,7 @@ class HomeView extends ConsumerWidget {
                                           mainAxisAlignment: MainAxisAlignment.center,
                                           children: [
                                             Text(
-                                              mockState.grade1,
+                                              state.subject1.unit.grade,
                                                 textAlign: TextAlign.center,
                                                 style: TextStyle(
                                                 color: Colors.white, 
@@ -318,7 +303,7 @@ class HomeView extends ConsumerWidget {
                                               ),
                                             ),
                                             Text(
-                                              mockState.subjectName1,
+                                              state.subject1.subjectName,
                                                 textAlign: TextAlign.center,
                                                 style: TextStyle(
                                                 color: Colors.white, 
@@ -400,7 +385,7 @@ class HomeView extends ConsumerWidget {
                                                 children: [
                                                   const SizedBox(height: 5),
                                                   Text(
-                                                    state.lessonName2,
+                                                    mockState.subject2.unit.lesson.lessonName,
                                                     textAlign: TextAlign.center,
                                                     style: TextStyle(
                                                       fontSize: 12,
@@ -430,7 +415,7 @@ class HomeView extends ConsumerWidget {
                                           mainAxisAlignment: MainAxisAlignment.center,
                                           children: [
                                             Text(
-                                              state.subjectName2,
+                                              mockState.subject2.subjectName,
                                                 textAlign: TextAlign.center,
                                                 style: TextStyle(
                                                 color: Colors.white, 
