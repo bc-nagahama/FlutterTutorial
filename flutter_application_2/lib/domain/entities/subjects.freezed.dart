@@ -855,7 +855,7 @@ $LessonCopyWith<$Res> get lesson {
 /// @nodoc
 mixin _$Lesson {
 
- String get lessonName; int get difficulty;
+ String get lessonName; Difficulty get difficulty;
 /// Create a copy of Lesson
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -888,7 +888,7 @@ abstract mixin class $LessonCopyWith<$Res>  {
   factory $LessonCopyWith(Lesson value, $Res Function(Lesson) _then) = _$LessonCopyWithImpl;
 @useResult
 $Res call({
- String lessonName, int difficulty
+ String lessonName, Difficulty difficulty
 });
 
 
@@ -909,7 +909,7 @@ class _$LessonCopyWithImpl<$Res>
   return _then(_self.copyWith(
 lessonName: null == lessonName ? _self.lessonName : lessonName // ignore: cast_nullable_to_non_nullable
 as String,difficulty: null == difficulty ? _self.difficulty : difficulty // ignore: cast_nullable_to_non_nullable
-as int,
+as Difficulty,
   ));
 }
 
@@ -994,7 +994,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String lessonName,  int difficulty)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String lessonName,  Difficulty difficulty)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Lesson() when $default != null:
 return $default(_that.lessonName,_that.difficulty);case _:
@@ -1015,7 +1015,7 @@ return $default(_that.lessonName,_that.difficulty);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String lessonName,  int difficulty)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String lessonName,  Difficulty difficulty)  $default,) {final _that = this;
 switch (_that) {
 case _Lesson():
 return $default(_that.lessonName,_that.difficulty);case _:
@@ -1035,7 +1035,7 @@ return $default(_that.lessonName,_that.difficulty);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String lessonName,  int difficulty)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String lessonName,  Difficulty difficulty)?  $default,) {final _that = this;
 switch (_that) {
 case _Lesson() when $default != null:
 return $default(_that.lessonName,_that.difficulty);case _:
@@ -1050,11 +1050,11 @@ return $default(_that.lessonName,_that.difficulty);case _:
 @JsonSerializable()
 
 class _Lesson implements Lesson {
-  const _Lesson({this.lessonName = '', this.difficulty = 0});
+  const _Lesson({this.lessonName = '', this.difficulty = Difficulty.none});
   factory _Lesson.fromJson(Map<String, dynamic> json) => _$LessonFromJson(json);
 
 @override@JsonKey() final  String lessonName;
-@override@JsonKey() final  int difficulty;
+@override@JsonKey() final  Difficulty difficulty;
 
 /// Create a copy of Lesson
 /// with the given fields replaced by the non-null parameter values.
@@ -1089,7 +1089,7 @@ abstract mixin class _$LessonCopyWith<$Res> implements $LessonCopyWith<$Res> {
   factory _$LessonCopyWith(_Lesson value, $Res Function(_Lesson) _then) = __$LessonCopyWithImpl;
 @override @useResult
 $Res call({
- String lessonName, int difficulty
+ String lessonName, Difficulty difficulty
 });
 
 
@@ -1110,7 +1110,7 @@ class __$LessonCopyWithImpl<$Res>
   return _then(_Lesson(
 lessonName: null == lessonName ? _self.lessonName : lessonName // ignore: cast_nullable_to_non_nullable
 as String,difficulty: null == difficulty ? _self.difficulty : difficulty // ignore: cast_nullable_to_non_nullable
-as int,
+as Difficulty,
   ));
 }
 

@@ -46,10 +46,19 @@ Map<String, dynamic> _$UnitToJson(_Unit instance) => <String, dynamic>{
 
 _Lesson _$LessonFromJson(Map<String, dynamic> json) => _Lesson(
   lessonName: json['lessonName'] as String? ?? '',
-  difficulty: (json['difficulty'] as num?)?.toInt() ?? 0,
+  difficulty:
+      $enumDecodeNullable(_$DifficultyEnumMap, json['difficulty']) ??
+      Difficulty.none,
 );
 
 Map<String, dynamic> _$LessonToJson(_Lesson instance) => <String, dynamic>{
   'lessonName': instance.lessonName,
-  'difficulty': instance.difficulty,
+  'difficulty': _$DifficultyEnumMap[instance.difficulty]!,
+};
+
+const _$DifficultyEnumMap = {
+  Difficulty.easy: 'easy',
+  Difficulty.normal: 'normal',
+  Difficulty.hard: 'hard',
+  Difficulty.none: 'none',
 };

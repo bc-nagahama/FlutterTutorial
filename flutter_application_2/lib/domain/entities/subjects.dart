@@ -1,7 +1,9 @@
+import 'package:flutter_application_2/domain/enums/difficulty.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'subjects.freezed.dart';
 part 'subjects.g.dart';
+
 
 @freezed 
 abstract class Subjects with _$Subjects{
@@ -40,7 +42,7 @@ abstract class Unit with _$Unit {
 abstract class Lesson with _$Lesson{
   const factory Lesson({
     @Default('') String lessonName,
-    @Default(0) int difficulty,
+    @Default(Difficulty.none) Difficulty difficulty,
   }) = _Lesson;
 
   factory Lesson.fromJson(Map<String, dynamic> json) =>
