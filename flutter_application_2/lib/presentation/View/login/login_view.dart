@@ -9,7 +9,6 @@ class LoginView extends ConsumerWidget{
 
   @override
   Widget build(BuildContext context, WidgetRef ref){
-    final state = ref.watch(loginViewModelProvider);
     final notifier = ref.read(loginViewModelProvider.notifier);
 
     return Scaffold(
@@ -18,14 +17,39 @@ class LoginView extends ConsumerWidget{
         title: Text('ログインページ'),
       ),
       body: Center(
-        child: ElevatedButton(
-          child: Text('ログインする'),
-          onPressed: (){
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => HomeView()),
-            );
-          }, 
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextField(
+              decoration: const InputDecoration(
+                labelText: 'ログインID',
+                border: OutlineInputBorder(),
+              ),
+              onChanged: (value) => notifier.setLoginId(value),
+            ),
+            const SizedBox(height: 16),
+
+            TextField(
+              decoration: const InputDecoration(
+                labelText: 'パスワード',
+                border: OutlineInputBorder(),
+              ),
+              obscureText: true,
+              onChanged: (value) => notifier.setPassword(value),
+            ),
+            const SizedBox(height: 24),
+
+            ElevatedButton(
+              child: Text('ログイン'),
+              onPressed: () async{
+                await notifier.login(authGroup: 'BYOD_CHU');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomeView()),
+                );
+              }, 
+            ),
+          ],
         ),
       ),
     );

@@ -3,7 +3,6 @@ import 'package:flutter_application_2/data/dtos/login_request.dart';
 import 'package:flutter_application_2/data/dtos/login_response.dart';
 import 'package:flutter_application_2/domain/entities/login.dart';
 import 'package:flutter_application_2/domain/repositories/login_repository.dart';
-import 'package:dio/dio.dart';
 
 class LoginRepositoryImpl implements LoginRepository{
 
@@ -19,12 +18,14 @@ class LoginRepositoryImpl implements LoginRepository{
   }) async {
     
     final request = LoginRequest(
-      authGroup: 'BYOD_CHU',
-      loginId: '',
-      password: '',
+      authGroup: authGroup,
+      loginId: loginId,
+      password: password,
     );
 
     final response = await loginDatasource.getLogin(request);
+
+    print(response);
 
     return response.toEntity();
   }
