@@ -19,7 +19,7 @@ class LoginView extends ConsumerWidget{
       ),
       body: Center(
         child: ElevatedButton(
-          child: Text('ログイン'),
+          child: Text('ログインする'),
           onPressed: (){
             Navigator.push(
               context,
