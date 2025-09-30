@@ -1,7 +1,7 @@
 // import 'dart:async';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
-import 'presentation/view/home/home_view.dart';
+import 'presentation/view/login/login_view.dart';
 
 void main() {
   runApp(
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
       ),
-      home: HomeView(),
+      home: LoginView(),
     );
   }
 }

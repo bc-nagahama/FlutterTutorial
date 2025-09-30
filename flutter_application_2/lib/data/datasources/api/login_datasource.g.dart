@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'subject_datasource.dart';
+part of 'login_datasource.dart';
 
 // dart format off
 
@@ -10,10 +10,8 @@ part of 'subject_datasource.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations,unused_element_parameter
 
-class _SubjectDatasource implements SubjectDatasource {
-  _SubjectDatasource(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'http://127.0.0.1:5502/flutter_application_2';
-  }
+class _LoginDatasource implements LoginDatasource {
+  _LoginDatasource(this._dio, {this.baseUrl, this.errorLogger});
 
   final Dio _dio;
 
@@ -22,25 +20,31 @@ class _SubjectDatasource implements SubjectDatasource {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<SubjectsResponse> getSubjects() async {
+  Future<LoginResponse> getLogin(LoginRequest request) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<SubjectsResponse>(
-      Options(method: 'GET', headers: _headers, extra: _extra)
+    final _headers = <String, dynamic>{r'Content-Type': 'application/json'};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = request;
+    final _options = _setStreamType<LoginResponse>(
+      Options(
+            method: 'POST',
+            headers: _headers,
+            extra: _extra,
+            contentType: 'application/json',
+          )
           .compose(
             _dio.options,
-            '/practice.json',
+            'https://czemi-digital-st.benesse.ne.jp/customer-service/auth/login',
             queryParameters: queryParameters,
             data: _data,
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late SubjectsResponse _value;
+    late LoginResponse _value;
     try {
-      _value = SubjectsResponse.fromJson(_result.data!);
+      _value = LoginResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
