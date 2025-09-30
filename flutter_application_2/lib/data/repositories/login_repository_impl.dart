@@ -20,8 +20,8 @@ class LoginRepositoryImpl implements LoginRepository{
     
     final request = LoginRequest(
       authGroup: 'BYOD_CHU',
-      loginId: '6748024352',
-      password: 'kxyy8735',
+      loginId: '',
+      password: '',
     );
 
     final response = await loginDatasource.getLogin(request);
