@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart' hide Headers;
+import 'package:flutter_application_2/data/dtos/auth_key_response.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:flutter_application_2/data/dtos/login_request.dart';
 import 'package:flutter_application_2/data/dtos/login_response.dart';
@@ -14,5 +15,9 @@ abstract class LoginDatasource {
   Future<LoginResponse> getLogin(
     @Body() LoginRequest request,
   );
+
+  @GET('https://zap-customer-st.benesse.ne.jp/customer-service/auth/key')
+  @Headers(<String, dynamic>{'Content-Type': 'application/json'})
+  Future<AuthKeyResponse> getAuthKey();
 
 }

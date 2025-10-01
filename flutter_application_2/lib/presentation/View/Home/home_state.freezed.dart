@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$HomeState {
 
- int get counter; Subject get subject1; Subject get subject2;
+ int get counter; Subject get subject1; Subject get subject2; String get nickname;
 /// Create a copy of HomeState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -25,16 +25,16 @@ $HomeStateCopyWith<HomeState> get copyWith => _$HomeStateCopyWithImpl<HomeState>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is HomeState&&(identical(other.counter, counter) || other.counter == counter)&&(identical(other.subject1, subject1) || other.subject1 == subject1)&&(identical(other.subject2, subject2) || other.subject2 == subject2));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is HomeState&&(identical(other.counter, counter) || other.counter == counter)&&(identical(other.subject1, subject1) || other.subject1 == subject1)&&(identical(other.subject2, subject2) || other.subject2 == subject2)&&(identical(other.nickname, nickname) || other.nickname == nickname));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,counter,subject1,subject2);
+int get hashCode => Object.hash(runtimeType,counter,subject1,subject2,nickname);
 
 @override
 String toString() {
-  return 'HomeState(counter: $counter, subject1: $subject1, subject2: $subject2)';
+  return 'HomeState(counter: $counter, subject1: $subject1, subject2: $subject2, nickname: $nickname)';
 }
 
 
@@ -45,7 +45,7 @@ abstract mixin class $HomeStateCopyWith<$Res>  {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) _then) = _$HomeStateCopyWithImpl;
 @useResult
 $Res call({
- int counter, Subject subject1, Subject subject2
+ int counter, Subject subject1, Subject subject2, String nickname
 });
 
 
@@ -62,12 +62,13 @@ class _$HomeStateCopyWithImpl<$Res>
 
 /// Create a copy of HomeState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? counter = null,Object? subject1 = null,Object? subject2 = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? counter = null,Object? subject1 = null,Object? subject2 = null,Object? nickname = null,}) {
   return _then(_self.copyWith(
 counter: null == counter ? _self.counter : counter // ignore: cast_nullable_to_non_nullable
 as int,subject1: null == subject1 ? _self.subject1 : subject1 // ignore: cast_nullable_to_non_nullable
 as Subject,subject2: null == subject2 ? _self.subject2 : subject2 // ignore: cast_nullable_to_non_nullable
-as Subject,
+as Subject,nickname: null == nickname ? _self.nickname : nickname // ignore: cast_nullable_to_non_nullable
+as String,
   ));
 }
 /// Create a copy of HomeState
@@ -170,10 +171,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int counter,  Subject subject1,  Subject subject2)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int counter,  Subject subject1,  Subject subject2,  String nickname)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _HomeState() when $default != null:
-return $default(_that.counter,_that.subject1,_that.subject2);case _:
+return $default(_that.counter,_that.subject1,_that.subject2,_that.nickname);case _:
   return orElse();
 
 }
@@ -191,10 +192,10 @@ return $default(_that.counter,_that.subject1,_that.subject2);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int counter,  Subject subject1,  Subject subject2)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int counter,  Subject subject1,  Subject subject2,  String nickname)  $default,) {final _that = this;
 switch (_that) {
 case _HomeState():
-return $default(_that.counter,_that.subject1,_that.subject2);case _:
+return $default(_that.counter,_that.subject1,_that.subject2,_that.nickname);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -211,10 +212,10 @@ return $default(_that.counter,_that.subject1,_that.subject2);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int counter,  Subject subject1,  Subject subject2)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int counter,  Subject subject1,  Subject subject2,  String nickname)?  $default,) {final _that = this;
 switch (_that) {
 case _HomeState() when $default != null:
-return $default(_that.counter,_that.subject1,_that.subject2);case _:
+return $default(_that.counter,_that.subject1,_that.subject2,_that.nickname);case _:
   return null;
 
 }
@@ -226,12 +227,13 @@ return $default(_that.counter,_that.subject1,_that.subject2);case _:
 
 
 class _HomeState implements HomeState {
-   _HomeState({this.counter = 0, this.subject1 = const Subject(), this.subject2 = const Subject()});
+   _HomeState({this.counter = 0, this.subject1 = const Subject(), this.subject2 = const Subject(), this.nickname = ''});
   
 
 @override@JsonKey() final  int counter;
 @override@JsonKey() final  Subject subject1;
 @override@JsonKey() final  Subject subject2;
+@override@JsonKey() final  String nickname;
 
 /// Create a copy of HomeState
 /// with the given fields replaced by the non-null parameter values.
@@ -243,16 +245,16 @@ _$HomeStateCopyWith<_HomeState> get copyWith => __$HomeStateCopyWithImpl<_HomeSt
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _HomeState&&(identical(other.counter, counter) || other.counter == counter)&&(identical(other.subject1, subject1) || other.subject1 == subject1)&&(identical(other.subject2, subject2) || other.subject2 == subject2));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _HomeState&&(identical(other.counter, counter) || other.counter == counter)&&(identical(other.subject1, subject1) || other.subject1 == subject1)&&(identical(other.subject2, subject2) || other.subject2 == subject2)&&(identical(other.nickname, nickname) || other.nickname == nickname));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,counter,subject1,subject2);
+int get hashCode => Object.hash(runtimeType,counter,subject1,subject2,nickname);
 
 @override
 String toString() {
-  return 'HomeState(counter: $counter, subject1: $subject1, subject2: $subject2)';
+  return 'HomeState(counter: $counter, subject1: $subject1, subject2: $subject2, nickname: $nickname)';
 }
 
 
@@ -263,7 +265,7 @@ abstract mixin class _$HomeStateCopyWith<$Res> implements $HomeStateCopyWith<$Re
   factory _$HomeStateCopyWith(_HomeState value, $Res Function(_HomeState) _then) = __$HomeStateCopyWithImpl;
 @override @useResult
 $Res call({
- int counter, Subject subject1, Subject subject2
+ int counter, Subject subject1, Subject subject2, String nickname
 });
 
 
@@ -280,12 +282,13 @@ class __$HomeStateCopyWithImpl<$Res>
 
 /// Create a copy of HomeState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? counter = null,Object? subject1 = null,Object? subject2 = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? counter = null,Object? subject1 = null,Object? subject2 = null,Object? nickname = null,}) {
   return _then(_HomeState(
 counter: null == counter ? _self.counter : counter // ignore: cast_nullable_to_non_nullable
 as int,subject1: null == subject1 ? _self.subject1 : subject1 // ignore: cast_nullable_to_non_nullable
 as Subject,subject2: null == subject2 ? _self.subject2 : subject2 // ignore: cast_nullable_to_non_nullable
-as Subject,
+as Subject,nickname: null == nickname ? _self.nickname : nickname // ignore: cast_nullable_to_non_nullable
+as String,
   ));
 }
 

@@ -7,4 +7,6 @@ abstract class LoginRepository {
     required String authGroup,
   });
 
+  Future<String> getAuthKey();
+
 }

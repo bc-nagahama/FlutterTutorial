@@ -30,5 +30,12 @@ class LoginRepositoryImpl implements LoginRepository{
     return response.toEntity();
   }
 
+  @override
+  Future<String> getAuthKey() async {
+    final response = await loginDatasource.getAuthKey();
+
+    return response.key;
+  }
+
   
 }
