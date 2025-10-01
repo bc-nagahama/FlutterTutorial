@@ -7,7 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final nicknameRepositoryProvider = Provider<NicknameRepository>((ref) {
   final dio = Dio();
-  dio.interceptors.add(ZapInterceptor(dio));
+  dio.interceptors.add(ZapInterceptor());
   final nicknameDatasource = NicknameDatasource(dio);
   return NicknameRepositoryImpl(nicknameDatasource);
 });

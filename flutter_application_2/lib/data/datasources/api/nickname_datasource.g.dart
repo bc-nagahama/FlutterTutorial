@@ -35,7 +35,7 @@ class _NicknameDatasource implements NicknameDatasource {
           )
           .compose(
             _dio.options,
-            'https://zap-customer-st.benesse.ne.jp/customer-service/member-info/nickname',
+            '/customer-service/member-info/nickname',
             queryParameters: queryParameters,
             data: _data,
           )

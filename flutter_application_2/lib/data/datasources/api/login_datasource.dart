@@ -10,13 +10,13 @@ part 'login_datasource.g.dart';
 abstract class LoginDatasource {
   factory LoginDatasource(Dio dio, {String? baseUrl}) = _LoginDatasource;
 
-  @POST('https://zap-customer-st.benesse.ne.jp/customer-service/auth/login')
+  @POST('/customer-service/auth/login')
   @Headers(<String, dynamic>{'Content-Type': 'application/json'})
   Future<LoginResponse> getLogin(
     @Body() LoginRequest request,
   );
 
-  @GET('https://zap-customer-st.benesse.ne.jp/customer-service/auth/key')
+  @GET('/customer-service/auth/key')
   @Headers(<String, dynamic>{'Content-Type': 'application/json'})
   Future<AuthKeyResponse> getAuthKey();
 

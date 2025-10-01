@@ -35,7 +35,7 @@ class _LoginDatasource implements LoginDatasource {
           )
           .compose(
             _dio.options,
-            'https://zap-customer-st.benesse.ne.jp/customer-service/auth/login',
+            '/customer-service/auth/login',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -68,7 +68,7 @@ class _LoginDatasource implements LoginDatasource {
           )
           .compose(
             _dio.options,
-            'https://zap-customer-st.benesse.ne.jp/customer-service/auth/key',
+            '/customer-service/auth/key',
             queryParameters: queryParameters,
             data: _data,
           )

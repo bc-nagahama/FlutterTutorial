@@ -8,7 +8,7 @@ part 'nickname_datasource.g.dart';
 abstract class NicknameDatasource {
   factory NicknameDatasource(Dio dio, {String? baseUrl}) = _NicknameDatasource;
 
-  @GET('https://zap-customer-st.benesse.ne.jp/customer-service/member-info/nickname')
+  @GET('/customer-service/member-info/nickname')
   @Headers(<String, dynamic>{'Content-Type': 'application/json'})
   Future<NicknameResponse> getNickname();
 }

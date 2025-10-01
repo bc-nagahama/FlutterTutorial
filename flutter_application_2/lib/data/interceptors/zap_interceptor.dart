@@ -6,9 +6,7 @@ import 'package:flutter_application_2/domain/services/signature_service.dart';
 
 class ZapInterceptor extends Interceptor{
 
-  ZapInterceptor(this.dio);
-
-  Dio dio;
+  ZapInterceptor();
 
   @override
   Future<void> onRequest(

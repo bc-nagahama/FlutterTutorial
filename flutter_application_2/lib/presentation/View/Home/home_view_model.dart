@@ -1,6 +1,7 @@
 import 'package:flutter_application_2/data/providers/subject_repository_provider.dart';
 import 'package:flutter_application_2/data/providers/nickname_repository_provider.dart';
 import 'package:flutter_application_2/domain/repositories/nickname_repository.dart';
+import 'package:flutter_application_2/domain/services/signature_service.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_application_2/presentation/view/home/home_state.dart';
 import 'package:flutter_application_2/domain/repositories/subject_repository.dart';
@@ -41,6 +42,8 @@ class HomeViewModel extends StateNotifier<HomeState>{
   Future<void> initialize() async{
 
     final subjectsEntity = await subjectRepository.getSubjects(); 
+
+    await SignatureService.instance.fetchHmacKey();
     final nicknameEntity = await nicknameRepository.getNickname();
 
     state = state.copyWith(
