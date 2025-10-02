@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:crypto/crypto.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_application_2/data/datasources/api/login_datasource.dart';
+import 'package:flutter_application_2/data/interceptors/zap_interceptor.dart';
 import 'package:flutter_application_2/data/repositories/login_repository_impl.dart';
 import 'package:flutter_application_2/domain/repositories/login_repository.dart';
 
@@ -15,7 +16,12 @@ class SignatureService {
 
   String hmacKey = '';
 
-  LoginRepository loginRepository = LoginRepositoryImpl(LoginDatasource(Dio()));
+  LoginRepository loginRepository = LoginRepositoryImpl(
+    LoginDatasource(
+      Dio()..interceptors.add(ZapInterceptor()),
+      baseUrl: 'https://zap-customer-st.benesse.ne.jp',
+    )
+  );
 
   ///
   /// 初期化処置

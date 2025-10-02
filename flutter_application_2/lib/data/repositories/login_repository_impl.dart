@@ -25,8 +25,6 @@ class LoginRepositoryImpl implements LoginRepository{
 
     final response = await loginDatasource.getLogin(request);
 
-    print(response);
-
     return response.toEntity();
   }
 

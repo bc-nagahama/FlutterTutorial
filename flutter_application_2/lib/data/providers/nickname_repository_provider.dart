@@ -8,6 +8,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 final nicknameRepositoryProvider = Provider<NicknameRepository>((ref) {
   final dio = Dio();
   dio.interceptors.add(ZapInterceptor());
-  final nicknameDatasource = NicknameDatasource(dio);
+  final nicknameDatasource = NicknameDatasource(
+    dio,
+    baseUrl: 'https://zap-customer-st.benesse.ne.jp',
+  );
   return NicknameRepositoryImpl(nicknameDatasource);
 });
