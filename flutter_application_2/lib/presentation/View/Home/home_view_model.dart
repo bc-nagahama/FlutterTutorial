@@ -40,6 +40,8 @@ class HomeViewModel extends StateNotifier<HomeState>{
       subject1: subjectsEntity.subjects[0],
       subject2: subjectsEntity.subjects[1],
     );
+
+    
   }
 
 

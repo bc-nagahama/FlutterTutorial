@@ -2,6 +2,8 @@
 
 part of 'subject_datasource.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -73,3 +75,5 @@ class _SubjectDatasource implements SubjectDatasource {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on
