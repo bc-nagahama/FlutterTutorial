@@ -10,7 +10,7 @@ final nicknameRepositoryProvider = Provider<NicknameRepository>((ref) {
   dio.interceptors.add(ZapInterceptor());
   final nicknameDatasource = NicknameDatasource(
     dio,
-    baseUrl: 'https://zap-customer-st.benesse.ne.jp',
+    baseUrl: 'http://localhost:3000',
   );
   return NicknameRepositoryImpl(nicknameDatasource);
 });

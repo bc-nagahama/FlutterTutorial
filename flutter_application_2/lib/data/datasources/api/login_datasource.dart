@@ -10,13 +10,13 @@ part 'login_datasource.g.dart';
 abstract class LoginDatasource {
   factory LoginDatasource(Dio dio, {String? baseUrl}) = _LoginDatasource;
 
-  @POST('/customer-service/auth/login')
+  @POST('/auth/login')
   @Headers(<String, dynamic>{'Content-Type': 'application/json'})
   Future<LoginResponse> getLogin(
     @Body() LoginRequest request,
   );
 
-  @GET('/customer-service/auth/key')
+  @GET('/auth/key')
   @Headers(<String, dynamic>{'Content-Type': 'application/json'})
   Future<AuthKeyResponse> getAuthKey();
 

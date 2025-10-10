@@ -44,6 +44,7 @@ class HomeViewModel extends StateNotifier<HomeState>{
     final subjectsEntity = await subjectRepository.getSubjects(); 
 
     await SignatureService.instance.fetchHmacKey();
+    
     final nicknameEntity = await nicknameRepository.getNickname();
 
     state = state.copyWith(

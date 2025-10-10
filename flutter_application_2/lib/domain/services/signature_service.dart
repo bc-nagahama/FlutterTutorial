@@ -16,13 +16,7 @@ class SignatureService {
 
   String hmacKey = '';
 
-  LoginRepository loginRepository = LoginRepositoryImpl(
-    LoginDatasource(
-      Dio()..interceptors.add(ZapInterceptor()),
-      baseUrl: 'https://zap-customer-st.benesse.ne.jp',
-    )
-  );
-
+  late LoginRepository loginRepository;
   ///
   /// 初期化処置
   ///

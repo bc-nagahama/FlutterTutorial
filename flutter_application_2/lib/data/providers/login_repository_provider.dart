@@ -10,7 +10,7 @@ final loginRepositoryProvider = Provider<LoginRepository>((ref) {
   dio.interceptors.add(ZapInterceptor());
   final loginDatasource = LoginDatasource(
     dio,
-    baseUrl: 'https://zap-customer-st.benesse.ne.jp',
+    baseUrl: 'http://localhost:3000',
   );
   return LoginRepositoryImpl(loginDatasource);
 });

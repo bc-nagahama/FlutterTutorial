@@ -1,12 +1,20 @@
 // import 'dart:async';
+import 'package:flutter_application_2/data/providers/login_repository_provider.dart';
+import 'package:flutter_application_2/domain/services/signature_service.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'presentation/view/login/login_view.dart';
 
 void main() {
+  final container = ProviderContainer();
+  final loginRepository = container.read(loginRepositoryProvider);
+
+  SignatureService.instance.initialize(loginRepository);
+
   runApp(
-    const ProviderScope(
-      child: MyApp()
+    UncontrolledProviderScope(
+      container: container,
+      child: const MyApp()
     ),
   );
 }

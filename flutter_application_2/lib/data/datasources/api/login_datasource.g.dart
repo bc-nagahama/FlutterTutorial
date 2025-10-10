@@ -35,7 +35,7 @@ class _LoginDatasource implements LoginDatasource {
           )
           .compose(
             _dio.options,
-            '/customer-service/auth/login',
+            '/auth/login',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -68,7 +68,7 @@ class _LoginDatasource implements LoginDatasource {
           )
           .compose(
             _dio.options,
-            '/customer-service/auth/key',
+            '/auth/key',
             queryParameters: queryParameters,
             data: _data,
           )
