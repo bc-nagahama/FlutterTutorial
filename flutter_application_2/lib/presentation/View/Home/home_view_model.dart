@@ -1,46 +1,57 @@
 import 'package:flutter_application_2/data/providers/subject_repository_provider.dart';
+import 'package:flutter_application_2/data/providers/nickname_repository_provider.dart';
+import 'package:flutter_application_2/domain/repositories/nickname_repository.dart';
+import 'package:flutter_application_2/domain/services/signature_service.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_application_2/presentation/view/home/home_state.dart';
 import 'package:flutter_application_2/domain/repositories/subject_repository.dart';
 import 'package:flutter_application_2/data/repositories/mock/subject_repository_mock.dart';
 
+// ///
+// ///mock用
+// ///
+// final mockHomeProvider = StateNotifierProvider<HomeViewModel, HomeState>(
+//   (ref) => HomeViewModel(
+//     SubjectRepositoryMock(),
+//   ),
+// );
+
 final homeProvider = StateNotifierProvider<HomeViewModel, HomeState>(
   (ref) => HomeViewModel(
-    ref.read(subjectRepositoryProvider)
+    ref.read(subjectRepositoryProvider),
+    ref.read(nicknameRepositoryProvider),
   ),
 );
 
-///
-///mock用
-///
-final mockHomeProvider = StateNotifierProvider<HomeViewModel, HomeState>(
-  (ref) => HomeViewModel(
-    SubjectRepositoryMock(),
-  ),
-);
 
 class HomeViewModel extends StateNotifier<HomeState>{
   HomeViewModel(
-    this.subjectRepository
+    this.subjectRepository,
+    this.nicknameRepository,
   ) : super(HomeState()){
     initialize();
   }
 
   final SubjectRepository subjectRepository;
+  final NicknameRepository nicknameRepository;
 
 
   ///
   ///初期化処理
   ///
   Future<void> initialize() async{
-    //抽象を呼び出していて具体（SubjectRepositoryImpl）は知らない
+
     final subjectsEntity = await subjectRepository.getSubjects(); 
+
+    await SignatureService.instance.fetchHmacKey();
+    
+    final nicknameEntity = await nicknameRepository.getNickname();
 
     state = state.copyWith(
       subject1: subjectsEntity.subjects[0],
       subject2: subjectsEntity.subjects[1],
+      nickname: nicknameEntity.nickname,
     );
-
     
   }
 

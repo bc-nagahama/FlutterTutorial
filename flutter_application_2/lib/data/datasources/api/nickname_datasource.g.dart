@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'login_datasource.dart';
+part of 'nickname_datasource.dart';
 
 // dart format off
 
@@ -10,8 +10,8 @@ part of 'login_datasource.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations,unused_element_parameter
 
-class _LoginDatasource implements LoginDatasource {
-  _LoginDatasource(this._dio, {this.baseUrl, this.errorLogger});
+class _NicknameDatasource implements NicknameDatasource {
+  _NicknameDatasource(this._dio, {this.baseUrl, this.errorLogger});
 
   final Dio _dio;
 
@@ -20,46 +20,13 @@ class _LoginDatasource implements LoginDatasource {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<LoginResponse> getLogin(LoginRequest request) async {
-    final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'Content-Type': 'application/json'};
-    _headers.removeWhere((k, v) => v == null);
-    final _data = request;
-    final _options = _setStreamType<LoginResponse>(
-      Options(
-            method: 'POST',
-            headers: _headers,
-            extra: _extra,
-            contentType: 'application/json',
-          )
-          .compose(
-            _dio.options,
-            '/auth/login',
-            queryParameters: queryParameters,
-            data: _data,
-          )
-          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
-    );
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late LoginResponse _value;
-    try {
-      _value = LoginResponse.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
-    return _value;
-  }
-
-  @override
-  Future<AuthKeyResponse> getAuthKey() async {
+  Future<NicknameResponse> getNickname() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{r'Content-Type': 'application/json'};
     _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AuthKeyResponse>(
+    final _options = _setStreamType<NicknameResponse>(
       Options(
             method: 'GET',
             headers: _headers,
@@ -68,16 +35,16 @@ class _LoginDatasource implements LoginDatasource {
           )
           .compose(
             _dio.options,
-            '/auth/key',
+            '/nickname',
             queryParameters: queryParameters,
             data: _data,
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AuthKeyResponse _value;
+    late NicknameResponse _value;
     try {
-      _value = AuthKeyResponse.fromJson(_result.data!);
+      _value = NicknameResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

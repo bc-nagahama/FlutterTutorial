@@ -11,7 +11,7 @@ class HomeView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref){
     final state = ref.watch(homeProvider);
     final notifier = ref.read(homeProvider.notifier);
-    final mockState = ref.watch(mockHomeProvider);
+    // final mockState = ref.watch(mockHomeProvider);
 
     return Scaffold(
       //ボディ
@@ -56,8 +56,8 @@ class HomeView extends ConsumerWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(
-                              'ベネッセ太郎',
+                            Text(
+                              state.nickname,
                               style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
                             ),
                             const SizedBox(height: 4),
@@ -384,7 +384,7 @@ class HomeView extends ConsumerWidget {
                                                 children: [
                                                   const SizedBox(height: 5),
                                                   Text(
-                                                    mockState.subject2.unit.lesson.lessonName,
+                                                    state.subject2.unit.lesson.lessonName,
                                                     textAlign: TextAlign.center,
                                                     style: TextStyle(
                                                       fontSize: 12,
@@ -414,7 +414,7 @@ class HomeView extends ConsumerWidget {
                                           mainAxisAlignment: MainAxisAlignment.center,
                                           children: [
                                             Text(
-                                              mockState.subject2.subjectName,
+                                              state.subject2.subjectName,
                                                 textAlign: TextAlign.center,
                                                 style: TextStyle(
                                                 color: Colors.white, 

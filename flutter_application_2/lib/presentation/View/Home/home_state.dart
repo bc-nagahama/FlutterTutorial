@@ -10,5 +10,7 @@ abstract class HomeState with _$HomeState{
 
     @Default(Subject()) Subject subject1,
     @Default(Subject()) Subject subject2,
+
+    @Default('') String nickname,
   }) = _HomeState;
 }
